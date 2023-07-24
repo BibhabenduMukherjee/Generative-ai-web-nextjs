@@ -1,0 +1,8 @@
+1. create next app --typescript
+2. npx shadcn-ui@latest init
+3. routings grouping inside app directory 
+      -- (dashboard)
+      -- (landing)
+      --  (auth) - (routes) - sign-in
+                            - sign-up
+4. use clerk for authentication and user management
