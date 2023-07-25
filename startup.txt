@@ -6,3 +6,5 @@
       --  (auth) - (routes) - sign-in
                             - sign-up
 4. use clerk for authentication and user management
+5. design clerk authMiddleware specify the private and public routes
+6. design dashboard layout (sidebar)
