@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import {zodResolver} from "@hookform/resolvers/zod"
 import { formSchema } from './constants'
 import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 function ConversationPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver : zodResolver(formSchema),
@@ -44,8 +45,13 @@ function ConversationPage() {
               </FormControl>
               </FormItem>
             )}/>
+             <Button disabled = {isLoading} className= 'col-span-12 lg:col-span-2'>Generate</Button>
           </form>
          </Form>
+
+        </div>
+        <div className = 'space-y-4 mt-4 '>
+          messages content
         </div>
     </div>
   )
