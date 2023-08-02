@@ -41,7 +41,7 @@ function CodePage() {
       messages : newMessages
     })
     setMessages((current) => [...current , userMessage , response.data]) 
-
+   form.reset()
    }catch(err)
    {
     console.log(err)
