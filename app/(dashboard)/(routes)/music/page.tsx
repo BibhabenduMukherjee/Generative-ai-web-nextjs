@@ -68,7 +68,7 @@ function MusicPage() {
               </FormControl>
               </FormItem>
             )}/>
-             <Button disabled = {isLoading} className= 'col-span-12 lg:col-span-2 w-full' size={"icon"}>Generate</Button>
+             <Button variant={"musicButton"} disabled = {isLoading} className= 'col-span-12 lg:col-span-2 w-full' size={"icon"}>Generate</Button>
           </form>
          </Form>
 

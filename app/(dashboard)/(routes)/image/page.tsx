@@ -159,7 +159,7 @@ const PhotoPage = () => {
                 </FormItem>
               )}
             />
-            <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+            <Button className="col-span-12 lg:col-span-2 w-full" variant={"imageButton"} type="submit" disabled={isLoading} size="icon">
               Generate
             </Button>
           </form>

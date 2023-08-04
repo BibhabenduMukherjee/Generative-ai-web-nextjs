@@ -1,11 +1,17 @@
-"use client"
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 import { Montserrat } from 'next/font/google'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { cn } from '@/lib/utils'
-import { usePathname } from "next/navigation";
 import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
+import { usePathname } from "next/navigation";
+
+import { cn } from "@/lib/utils";
+import FreeCounter from "./FreeCounter";
+
+
+
+const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
 
 const routes = [
   {
@@ -51,21 +57,27 @@ const routes = [
   },
 ];
 
-const montserrat = Montserrat({weight : "600" , subsets : ["latin"]}) 
-function SideBar() {
+export const Sidebar = ({
+  apiLimitCount = 0,
+  
+}: {
+  apiLimitCount: number;
+  
+}) => {
   const pathname = usePathname();
+
   return (
-    <div className = 'space-y-4 felx  flex-col h-full bg-[#111827] text-white'>
-           {/* logo+options */}
-          <div className = "px-3 py-2 flex-1">
-            {/* company logo */}
-            <Link href = "/dashboard" className = 'flex items-center pl-3 mb-14'>
-                <div className = 'relative w-8 h-8 mr-4'>
-                    <Image fill alt = "logo" src= "/logo.png"  className = "mt-2"/>
-                </div>
-                <h1 className ={cn("text-2xl mt-4 font-bold" , montserrat.className)} >Genius</h1>
-            </Link>
-            <div className="space-y-1">
+    <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
+      <div className="px-3 py-2 flex-1">
+        <Link href="/dashboard" className="flex items-center pl-3 mb-14">
+          <div className="relative h-8 w-8 mr-4">
+            <Image fill alt="Logo" src="/logo.png" />
+          </div>
+          <h1 className={cn("text-2xl font-bold", poppins.className)}>
+            Genius
+          </h1>
+        </Link>
+        <div className="space-y-1">
           {routes.map((route) => (
             <Link
               key={route.href} 
@@ -82,12 +94,13 @@ function SideBar() {
             </Link>
           ))}
         </div>
-       
-            </div>   
-
-            {/* freeCounter */}
+      </div>
+      <FreeCounter 
+        apiLimitCount={apiLimitCount} 
+        
+      />
     </div>
-  )
-}
+  );
+};
 
-export default SideBar
+export default Sidebar
