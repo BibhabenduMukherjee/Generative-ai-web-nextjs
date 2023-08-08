@@ -1,0 +1,16 @@
+{
+    "functions": {
+      "/api/code/route.ts": {
+        "memory": 3008,
+        "maxDuration": 60
+      },
+      "/api/image/route.ts": {
+        "memory": 3008,
+        "maxDuration": 60
+      },
+      "/api/conversation/route.ts" : {
+        "memory": 3008,
+        "maxDuration": 60
+      }
+    }
+  }
